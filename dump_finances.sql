@@ -42,9 +42,10 @@ CREATE TABLE IF NOT EXISTS `t_factures` (
 -- Déchargement des données de la table `t_factures`
 --
 
-INSERT INTO `t_factures` (`id_facture`, `magasin_facture`, `date_facture`, `total_facture`) VALUES
-(1, 1, '2020-11-10', '190.00'),
-(2, 1, '2020-11-12', '9.89');
+INSERT INTO `t_factures` (`magasin_facture`, `date_facture`, `total_facture`) VALUES
+(1, '2020-11-5', '135.97'),
+(1, '2020-11-10', '191.8'),
+(1, '2020-11-12', '9.89');
 
 -- --------------------------------------------------------
 
@@ -56,6 +57,7 @@ DROP TABLE IF EXISTS `t_magasins`;
 CREATE TABLE IF NOT EXISTS `t_magasins` (
   `id_magasin` int(11) NOT NULL AUTO_INCREMENT,
   `enseigne_magasin` int(11) NOT NULL,
+  `nom_magasin` varchar(255) NOT NULL,
   `adresse_magasin` varchar(250) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id_magasin`),
   KEY `enseigne_magasin` (`enseigne_magasin`)
@@ -65,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `t_magasins` (
 -- Déchargement des données de la table `t_magasins`
 --
 
-INSERT INTO `t_magasins` (`id_magasin`, `enseigne_magasin`, `adresse_magasin`) VALUES
-(1, 1, ' Chaussée de Wavre 328, 1390 Grez-Doiceau');
+INSERT INTO `t_magasins` (`enseigne_magasin`, `nom_magasin`, `adresse_magasin`) VALUES
+(1, 'Colruyt Grez-Doiceau', ' Chaussée de Wavre 328, 1390 Grez-Doiceau');
 
 -- --------------------------------------------------------
 
@@ -87,6 +89,6 @@ CREATE TABLE IF NOT EXISTS `t_revenus` (
 -- Déchargement des données de la table `t_revenus`
 --
 
-INSERT INTO `t_revenus` (`id_revenu`, `date_revenu`, `montant_revenu`, `com_revenu`) VALUES
-(1, '2020-11-06', '315.00', 'Salaire');
+INSERT INTO `t_revenus` (`date_revenu`, `montant_revenu`, `com_revenu`) VALUES
+('2020-11-06', '315.00', 'Salaire');
 COMMIT;
