@@ -19,7 +19,7 @@ public class DB {
 			
 			System.out.println("Connection..");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/finances?serverTimezone=UTC", "root", ""); // Connexion à la DB
-			System.out.println("Connection done");
+			System.out.println("Connection done\n");
 			
 			return conn;
 		} catch (ClassNotFoundException e) {

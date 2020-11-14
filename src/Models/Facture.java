@@ -10,7 +10,7 @@ public class Facture {
 	double total;
 	Magasin magasin;
 	
-	public Facture(int id, Date date, double total, int magasin) {
+	public Facture(int id, int magasin, Date date, double total) {
 		this.id = id;
 		this.date = date;
 		this.total = total;
@@ -31,5 +31,15 @@ public class Facture {
 	
 	public Magasin getMagasin() {
 		return magasin;
+	}
+	
+	@Override
+	public String toString() {
+		return "Facture {" +
+				"id = " + id +
+				", date = " + date +
+				", total = " + total +
+				", magasin = " + magasin +
+				'}';
 	}
 }

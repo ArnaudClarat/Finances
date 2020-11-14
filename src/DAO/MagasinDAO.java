@@ -17,9 +17,10 @@ public class MagasinDAO {
 			ResultSet resultSet = stmt.executeQuery(query + id);
 			while (resultSet.next()) {
 				return new Magasin(
-						resultSet.getInt("id_magasin"),
-						resultSet.getInt("enseigne_magasin"),
-						resultSet.getString("adresse_magasin")
+						resultSet.getInt(1),
+						resultSet.getInt(2),
+						resultSet.getString(3),
+						resultSet.getString(4)
 				);
 			}
 			return null;

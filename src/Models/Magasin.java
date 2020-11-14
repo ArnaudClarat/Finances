@@ -3,14 +3,16 @@ package Models;
 import DAO.EnseigneDAO;
 
 public class Magasin {
-	int id;
-	Enseigne enseigne;
-	String Adresse;
+	private int id;
+	private Enseigne enseigne;
+	private String nom;
+	private String adresse;
 	
-	public Magasin(int id, int enseigne, String adresse) {
+	public Magasin(int id, int enseigne, String nom, String adresse) {
 		this.id = id;
 		this.enseigne = EnseigneDAO.getOne(enseigne);
-		Adresse = adresse;
+		this.nom = nom;
+		this.adresse = adresse;
 	}
 	
 	public int getId() {
@@ -21,7 +23,16 @@ public class Magasin {
 		return enseigne;
 	}
 	
+	public String getNom() {
+		return nom;
+	}
+	
 	public String getAdresse() {
-		return Adresse;
+		return adresse;
+	}
+	
+	@Override
+	public String toString() {
+		return nom;
 	}
 }
